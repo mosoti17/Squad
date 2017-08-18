@@ -1,1 +1,16 @@
 <h1>Add Heros to squad $squad.getName()</h1>
+<div class="col-md-6">
+  <p>These are all the heroes in $squad.getName() squad</p>
+  #foreach ($hero in $squad.getHeros())
+    <p>$hero.getName()</p>
+  #end
+
+  <h1>All Heros</h1>
+  #foreach ($hero in $heros)
+  <li><a href="/$hero.getId()"> $hero.getName()</a></li>
+  <!-- <button type="button" name="button" value="$find(hero.getId())"> -->
+    <form action="/squad/$squad.getId()/assignhero/$hero.getId()" method="post"><button type="submit" name="button">Add this hero</button></form>
+
+  <!-- </button> -->
+  #end
+</div>

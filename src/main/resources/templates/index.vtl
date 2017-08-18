@@ -2,18 +2,54 @@
   <h1>Superhero squad website</h1>
   <div class="row">
     <div class="col-md-5">
-      <h1>Add a Squad</h1>
-        <form class="squad-form" action="/" method="post">
-          <div >
-            <label for="name">Name of Squad</label>
-            <input type="text" name="name" class="form-control">
+      <button type="button" class="btn btn-info " data-toggle="modal" data-target="#squad">Add Squad</button>
+        <div class="modal fade" id="squad" role="document">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+              <form class="squad-form" action="/" method="post" >
+                <div >
+                  <label for="name">Name of Squad</label>
+                  <input type="text" name="name" class="form-control" required="required">
+                </div>
+                <div >
+                  <label for="cause">Cause of squad</label>
+                  <textarea name="cause" rows="4" class="form-control" required="required"></textarea >
+                </div>
+                <button type="submit" class="btn btn-success" >Add Squad</button>
+              </form>
+            </div>
           </div>
-          <div >
-            <label for="cause">Cause of squad</label>
-            <textarea name="cause" rows="4" class="form-control"></textarea><br>
+
+        </div>
+        <button type="button" class="btn btn-info " data-toggle="modal" data-target="#hero">Add Hero</button>
+          <div class="modal fade" id="hero" role="document">
+            <div class="row">
+              <div class="col-md-6 col-md-offset-3">
+                <form class="squad-form" action="/" method="post">
+                  <div >
+                    <label for="name">Name of Hero</label>
+                    <input type="text" name="name" class="form-control" required="required">
+                  </div>
+                  <div >
+                    <label for="age">Age</label>
+                    <input type="number" name="age" class="form-control" required="required">
+                  </div>
+                  <div >
+                    <label for="strength">Strength</label>
+                    <input type="text" name="strength" class="form-control" required="required">
+                  </div>
+                  <div >
+                    <label for="weakness">Weakness</label>
+                    <input type="text" name="weakness" class="form-control" required="required">
+                  </div>
+
+                  <button type="submit" class="btn btn-success" >Add Hero</button>
+                </form>
+              </div>
+            </div>
+
           </div>
-          <button type="submit" class="btn btn-success">Add Squad</button>
-        </form>
+
     </div>
 
   </div>
@@ -25,6 +61,12 @@
 
       #end
     </div>
+    <div class="col-md-6">
+      <h1>All Heros</h1>
+      #foreach ($hero in $heros)
+      <li><a href="/$hero.getId()"> $hero.getName()</a></li>
 
+      #end
+    </div>
   </div>
 </div>
