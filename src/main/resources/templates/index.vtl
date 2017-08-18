@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Superhero squad website</h1>
+  <div class="row">
+    <div class="col-md-5">
+      <h1>Add a Squad</h1>
+        <form class="squad-form" action="/" method="post">
+          <div >
+            <label for="name">Name of Squad</label>
+            <input type="text" name="name" class="form-control">
+          </div>
+          <div >
+            <label for="cause">Cause of squad</label>
+            <textarea name="cause" rows="4" class="form-control"></textarea><br>
+          </div>
+          <button type="submit" class="btn btn-success">Add Squad</button>
+        </form>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h1>All Squads</h1>
+      #foreach ($squad in $squads)
+      <li><a href="/$squad.getId()"> $squad.getName()</a></li>
+
+      #end
+    </div>
+
+  </div>
+</div>
