@@ -1,0 +1,19 @@
+<div class="container">
+
+  #if($heros.size()==0)
+  <div class="nohero">
+    <h1>Heros will apear here</h1>
+  </div>
+    #else
+    <h1>All Heros</h1>
+    #foreach($hero in $heros)
+      <div class="col-md-3">
+        <h3>$hero.getName()</h3>
+        <p>$hero.getAge()</p>
+        <p>$hero.getSuperpowers()</p>
+        <p>$hero.getWeakness()</p>
+      </div>
+    #end
+  #end
+
+</div>

@@ -1,0 +1,22 @@
+.form{
+  background-color: white;
+  margin-top: 20%;
+}
+.modal{
+  resize: none;
+}
+.nosquad{
+  text-align: center;
+  color: rgb(89, 85, 85);
+  margin-top: 20%;
+}
+.squaditem{
+  background-color: #95a8c3;
+  text-align: center;
+  margin-left: 2%;
+}
+.squadhero{
+  background-color: #95a8c3;
+  text-align: center;
+  margin-left: 2%;
+}

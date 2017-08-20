@@ -1,11 +1,28 @@
 <div class="container">
   <h1>Superhero squad website</h1>
   <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-9">
+  <div class="rules">
+    <h3>Rules</h3>
+    <ol>
+      <li>Add heros by clicking on the add heros button</li>
+      <li>Add Squads by clicking on the add squad button</li>
+      <li>Click on a individual squad to add heros to the squad by clicking on the add hero to squad button</li>
+      <li>Maximum heros allowed per squad is 5</li>
+
+    </ol>
+
+
+  </div>
+
+</div>
+
+  <div class="col-md-3">
+    <div class="row">
       <button type="button" class="btn btn-info " data-toggle="modal" data-target="#squad">Add Squad</button>
-        <div class="modal fade" id="squad" role="document">
+        <div class="modal fade" id="squad" role="document" >
           <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-6 col-md-offset-3 form" >
               <form class="squad-form" action="/" method="post" >
                 <div >
                   <label for="name">Name of Squad</label>
@@ -21,11 +38,13 @@
           </div>
 
         </div>
+        <div class="row">
+
         <button type="button" class="btn btn-info " data-toggle="modal" data-target="#hero">Add Hero</button>
           <div class="modal fade" id="hero" role="document">
             <div class="row">
-              <div class="col-md-6 col-md-offset-3">
-                <form class="squad-form" action="/" method="post">
+              <div class="col-md-6 col-md-offset-3 form">
+                <form class="squad-form" action="/hero" method="post">
                   <div >
                     <label for="name">Name of Hero</label>
                     <input type="text" name="name" class="form-control" required="required">
@@ -51,22 +70,26 @@
           </div>
 
     </div>
+    </div>
 
   </div>
+  </div>
+
   <div class="row">
-    <div class="col-md-6">
+
+      #if($squads.size()==0)
+      <div class="nosquad">
+        <h1>Squads will apear here</h1>
+      </div>
+      #else
       <h1>All Squads</h1>
       #foreach ($squad in $squads)
-      <li><a href="/$squad.getId()"> $squad.getName()</a></li>
-
+      <div class="col-md-4 squaditem">
+        <h2>$squad.getName()</h2>
+        <p>$squad.getCause()</p>
+        <button ><a href="/squad/$squad.getId()">View Squad</a></button>
+      </div>
       #end
-    </div>
-    <div class="col-md-6">
-      <h1>All Heros</h1>
-      #foreach ($hero in $heros)
-      <li><a href="/$hero.getId()"> $hero.getName()</a></li>
-
       #end
-    </div>
   </div>
 </div>
