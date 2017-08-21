@@ -8,15 +8,42 @@
 .nosquad{
   text-align: center;
   color: rgb(89, 85, 85);
-  margin-top: 20%;
+  margin-top: 12%;
+  color: #b9bfb5;
 }
 .squaditem{
   background-color: #95a8c3;
   text-align: center;
-  margin-left: 2%;
+  margin-bottom: 2%;
+  padding-bottom: 1%;
 }
 .squadhero{
   background-color: #95a8c3;
   text-align: center;
   margin-left: 2%;
+}
+.nohero{
+  color: #b9bfb5;
+  margin-top: 25%;
+  text-align: center;
+}
+h1{
+  text-align: center;
+  padding-bottom: 3%;
+}
+.rules p{
+  line-height: 25px;
+  padding-left: 100px;
+}
+.hero{
+  background-color: #95a8c3;
+  text-align: center;
+  margin-left: 2%;
+}
+.buttons{
+  padding-left: 10%;
+}
+.modal{
+  resize: none;
+  padding: 20px;
 }

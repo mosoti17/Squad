@@ -7,11 +7,11 @@
     #else
     <h1>All Heros</h1>
     #foreach($hero in $heros)
-      <div class="col-md-3">
-        <h3>$hero.getName()</h3>
-        <p>$hero.getAge()</p>
-        <p>$hero.getSuperpowers()</p>
-        <p>$hero.getWeakness()</p>
+      <div class="col-md-3 hero">
+        <h3>Name: $hero.getName()</h3>
+        <p>Age: $hero.getAge()</p>
+        <p>Superpowers: $hero.getSuperpowers()</p>
+        <p>Weakness: $hero.getWeakness()</p>
       </div>
     #end
   #end

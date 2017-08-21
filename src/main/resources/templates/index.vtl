@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Superhero squad website</h1>
+  <h1>Superhero Squad</h1>
   <div class="row">
     <div class="col-md-9">
   <div class="rules">
@@ -17,8 +17,9 @@
 
 </div>
 
-  <div class="col-md-3">
+  <div class="col-md-3 buttons">
     <div class="row">
+      <div class="row">
       <button type="button" class="btn btn-info " data-toggle="modal" data-target="#squad">Add Squad</button>
         <div class="modal fade" id="squad" role="document" >
           <div class="row">
@@ -32,15 +33,15 @@
                   <label for="cause">Cause of squad</label>
                   <textarea name="cause" rows="4" class="form-control" required="required"></textarea >
                 </div>
-                <button type="submit" class="btn btn-success" >Add Squad</button>
+                <br><button type="submit" class="btn btn-success" >Add Squad</button>
               </form>
             </div>
           </div>
-
+          </div>
         </div>
         <div class="row">
 
-        <button type="button" class="btn btn-info " data-toggle="modal" data-target="#hero">Add Hero</button>
+      <br><br><br><br> <button type="button" class="btn btn-info " data-toggle="modal" data-target="#hero">Add Hero</button>
           <div class="modal fade" id="hero" role="document">
             <div class="row">
               <div class="col-md-6 col-md-offset-3 form">
@@ -62,7 +63,7 @@
                     <input type="text" name="weakness" class="form-control" required="required">
                   </div>
 
-                  <button type="submit" class="btn btn-success" >Add Hero</button>
+                  <br><button type="submit" class="btn btn-success" >Add Hero</button>
                 </form>
               </div>
             </div>
@@ -84,7 +85,7 @@
       #else
       <h1>All Squads</h1>
       #foreach ($squad in $squads)
-      <div class="col-md-4 squaditem">
+      <div class="col-md-3 col-md-offset-1 squaditem">
         <h2>$squad.getName()</h2>
         <p>$squad.getCause()</p>
         <button ><a href="/squad/$squad.getId()">View Squad</a></button>
